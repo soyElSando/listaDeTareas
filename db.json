@@ -1,28 +1,22 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "text": "Terminar modulo de Angular",
-      "day": "Agosto 5 a las 12:00",
-      "reminder": true
+      "text": "No hacer caca",
+      "day": "Cada vez que se hace pis",
+      "reminder": true,
+      "id": 5
     },
     {
-      "id": 2,
-      "text": "Hacer las compras para la cena",
-      "day": "Agosto 5 a las 17:00",
-      "reminder": false
+      "text": "Seguir viendo desde la hora 2:12",
+      "day": "cuando se pueda",
+      "reminder": false,
+      "id": 6
     },
     {
       "text": "Correr",
-      "day": "Julio 8 a las 22:00",
-      "reminder": false,
-      "id": 3
-    },
-    {
-      "text": "Jugar ajedrez",
-      "day": "8 de agosto",
-      "reminder": false,
-      "id": 4
+      "day": "todos los días",
+      "reminder": true,
+      "id": 7
     }
   ]
 }
