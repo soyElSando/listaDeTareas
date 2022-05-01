@@ -1,3 +1,5 @@
-<footer>
-    <a routerLink="/about">Acerca de</a>
+<footer
+    *ngIf="hasRoute()"
+>
+    <a class="btn" routerLink="/about">Acerca de</a>
 </footer>

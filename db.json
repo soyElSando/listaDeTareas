@@ -1,22 +1,22 @@
 {
   "tasks": [
     {
-      "text": "No hacer caca",
-      "day": "Cada vez que se hace pis",
+      "text": "No hacer caca al mear",
+      "day": "2023-01-29T01:01",
+      "reminder": true,
+      "id": 4
+    },
+    {
+      "text": "Jugar ajedrez",
+      "day": "2022-05-02T01:10",
       "reminder": true,
       "id": 5
     },
     {
-      "text": "Seguir viendo desde la hora 2:12",
-      "day": "cuando se pueda",
+      "text": "Correr",
+      "day": "2022-05-01T11:11",
       "reminder": false,
       "id": 6
-    },
-    {
-      "text": "Correr",
-      "day": "todos los días",
-      "reminder": true,
-      "id": 7
     }
   ]
 }

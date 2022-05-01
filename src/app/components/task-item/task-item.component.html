@@ -1,5 +1,6 @@
 <div 
     class="task"
+    [ngStyle]="{'background-color': color}"
     [ngClass]="{reminder: task.reminder}"
     (dblclick)="onToggle(task)"
 >
@@ -7,10 +8,23 @@
         {{task.text}}
         <fa-icon 
             [icon]="faTimes"
-            [ngStyle]="{'color':'#B41600'}"   
+            [ngStyle]="{'color':'black'}"   
             (click)="(onDelete(task))"
         ></fa-icon></h3>
-    <p>
-        {{task.day}}
-    </p>
+    <div class="flex">
+        {{task.day | date:'EEE, dd MMM yy,  HH:mm'}} hs
+        <div>
+            <fa-icon 
+                [icon]="faBell"
+                [ngStyle]="{'color':'#227312'}"
+                *ngIf="task.reminder" 
+            ></fa-icon>
+            <a [routerLink]='["/update", task.id]'>
+                <fa-icon 
+                [icon]="faPencil"
+                [ngStyle]="{'color':'black'}" 
+                ></fa-icon>
+            </a>
+        </div>
+    </div>
 </div>
