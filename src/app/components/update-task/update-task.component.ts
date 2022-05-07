@@ -2,7 +2,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { ActivatedRoute,Router } from '@angular/router';
 
 import { TaskService } from 'src/app/service/task.service';
-import {Task} from '../../Task';
+import {CATEGORY, Task} from '../../Task';
 
 @Component({
   selector: 'app-update-task',
@@ -14,6 +14,7 @@ export class UpdateTaskComponent implements OnInit {
   @Output() onAddTask: EventEmitter<Task> = new EventEmitter();
   text:string="";
   day:Date=new Date();
+  category:CATEGORY=CATEGORY.Home;
   reminder:boolean=false;
 
   id:number=0;
@@ -29,6 +30,7 @@ export class UpdateTaskComponent implements OnInit {
       this.tasks= tasks.filter(t=>t.id==this.id)
       this.text=this.tasks[0].text
       this.day=this.tasks[0].day
+      this.category=this.tasks[0].category
       this.reminder=this.tasks[0].reminder
     });
     
@@ -39,8 +41,8 @@ export class UpdateTaskComponent implements OnInit {
     if(this.text.length===0){
       alert("please add a task");
     } else{
-    const {text,day,reminder, id} = this
-    const updatedTask ={text,day,reminder, id}
+    const {text,day,category,reminder, id} = this
+    const updatedTask ={text,day,category,reminder, id}
     console.log(updatedTask)
     this.taskService.updateTask(updatedTask).subscribe();
     this.router.navigate(["/"])

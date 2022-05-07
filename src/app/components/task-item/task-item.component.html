@@ -13,6 +13,10 @@
         ></fa-icon></h3>
     <div class="flex">
         {{task.day | date:'EEE, dd MMM yy,  HH:mm'}} hs
+
+        <p>
+            {{task.category}}
+        </p>
         <div>
             <fa-icon 
                 [icon]="faBell"

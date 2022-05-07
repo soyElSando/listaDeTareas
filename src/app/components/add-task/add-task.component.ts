@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import {Task} from '../../Task';
+import {CATEGORY, Task} from '../../Task';
 import { UiService } from 'src/app/service/ui.service';
 import { Subscription } from 'rxjs';
 
@@ -13,8 +13,11 @@ export class AddTaskComponent implements OnInit {
   text:string="";
   day:Date=new Date();
   reminder:boolean=false;
+  category:CATEGORY=CATEGORY.Home;
   showAddTask: boolean=false;
   subscription?: Subscription;
+
+  categories: any[]=[];
 
   constructor(
     private uiService:UiService
@@ -29,8 +32,8 @@ export class AddTaskComponent implements OnInit {
     if(this.text.length===0){
       alert("please add a task");
     } else{
-    const {text,day,reminder} = this
-    const newTask ={text,day,reminder}
+    const {text,day,category,reminder} = this
+    const newTask ={text,day,category,reminder}
     this.onAddTask.emit(newTask);
     this.limpiarForm();
     /* const newTask={
@@ -44,6 +47,7 @@ export class AddTaskComponent implements OnInit {
   limpiarForm(){
     this.text="";
     this.day=new Date();
+    this.category=CATEGORY.Home;
     this.reminder=false;
   }
 

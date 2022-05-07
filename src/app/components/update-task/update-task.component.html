@@ -23,6 +23,19 @@
             [(ngModel)]="day"
         />
     </div>
+    <div class="form-control">    
+        <label for="text">Categoría</label>
+        <select
+            class="form-control"
+            name="category"
+            id="category"
+            [(ngModel)]="category"
+        >
+            <option value="pink">Hogar</option>
+            <option value="yellow">Estudios</option>
+            <option value="blue">Trabajo</option>
+        </select>
+    </div> 
     <div class="form-control form-control-check">    
         <label for="reminder">Recordatorio</label>
         <input
