@@ -26,6 +26,11 @@ export class AddTaskComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    for (let item in CATEGORY){
+      if(isNaN(Number(item))){
+        this.categories.push({description:item, color: CATEGORY[item]});
+      }
+    }
   }
 
   onSubmit(){

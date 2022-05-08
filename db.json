@@ -1,29 +1,25 @@
 {
   "tasks": [
     {
-      "text": "No hacer caca al mear",
-      "day": "2023-01-29T01:01",
-      "reminder": true,
-      "id": 4
-    },
-    {
       "text": "Jugar ajedrez",
       "day": "2022-05-02T01:10",
-      "reminder": true,
-      "id": 5
-    },
-    {
-      "text": "Correr",
-      "day": "2022-05-01T11:11",
+      "category": "2",
       "reminder": false,
-      "id": 6
+      "id": 5
     },
     {
       "text": "Seguir viendo desde la hora 2:12",
       "day": "2022-05-18T23:18",
-      "category": "yellow",
-      "reminder": true,
+      "category": "3",
+      "reminder": false,
       "id": 7
+    },
+    {
+      "text": "Jugar ajedrez",
+      "day": "2022-05-08T18:00",
+      "category": "2",
+      "reminder": true,
+      "id": 9
     }
   ]
 }

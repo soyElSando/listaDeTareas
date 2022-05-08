@@ -27,14 +27,18 @@
     <div class="form-control">    
         <label for="text">Categoría</label>
         <select
-            class="form-control"
+            class="form-control selector"
             name="category"
             id="category"
             [(ngModel)]="category"
         >
-            <option value="pink">Hogar</option>
+        <option
+            class="selector"
+            *ngFor="let cat of categories" [value]="cat.color"
+        >{{cat.description}}</option>
+            <!-- <option value="pink">Hogar</option>
             <option value="yellow">Estudios</option>
-            <option value="blue">Trabajo</option>
+            <option value="blue">Trabajo</option> -->
         </select>
     </div>
     <div class="form-control form-control-check">    

@@ -15,12 +15,14 @@ import { FooterComponent } from './components/footer/footer.component';
 import { registerLocaleData } from '@angular/common';
 import localeEsAr from '@angular/common/locales/es-AR';
 import { UpdateTaskComponent } from './components/update-task/update-task.component';
+import { ErrorComponent } from './components/error/error.component';
 registerLocaleData(localeEsAr);
 
 const appRoutes:Routes =[
   {path:'', component: TasksComponent},
   {path: 'about', component: AboutComponent},
-  {path: 'update/:id', component: UpdateTaskComponent}
+  {path: 'update/:id', component: UpdateTaskComponent},
+  {path: '**', component: ErrorComponent}
 ]
 
 @NgModule({
@@ -33,7 +35,8 @@ const appRoutes:Routes =[
     AddTaskComponent,
     AboutComponent,
     FooterComponent,
-    UpdateTaskComponent
+    UpdateTaskComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,

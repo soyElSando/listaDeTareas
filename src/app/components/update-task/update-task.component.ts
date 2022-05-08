@@ -20,6 +20,8 @@ export class UpdateTaskComponent implements OnInit {
   id:number=0;
   tasks: Task[]=[];
 
+  categories: any[]=[];
+
   constructor(private route:ActivatedRoute, private taskService: TaskService, private router:Router) { 
     
   }
@@ -34,7 +36,11 @@ export class UpdateTaskComponent implements OnInit {
       this.reminder=this.tasks[0].reminder
     });
     
-    
+    for (let item in CATEGORY){
+      if(isNaN(Number(item))){
+        this.categories.push({description:item, color: CATEGORY[item]});
+      }
+    }
   }
   
   onSubmit(){

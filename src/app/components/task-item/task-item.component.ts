@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import {Task} from '../../Task';
+import {CATEGORY, COLORS, COLORTASK, Task} from '../../Task';
 import { TASK } from 'src/app/mock-tasks';
-import { faPencil, faTimes, faBell } from '@fortawesome/free-solid-svg-icons';
+import { faPencil, faTimes, faBell, faBriefcaseClock } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-task-item',
@@ -16,18 +16,35 @@ export class TaskItemComponent implements OnInit {
   faTimes=faTimes;
   faPencil=faPencil;
   faBell=faBell;
-  color:string= 'bisque';
+  color:string= COLORTASK.Pending;
   d = new Date();
-  constructor () { }
+
+  borderColor:string="green";
+
+  constructor () {
+    
+   }
 
   ngOnInit(): void {
     let fechaActual = new Date(this.d);
     let fechaComponente = new Date(this.task.day);
     const unDia=86400000;
     if (fechaComponente.getTime()-fechaActual.getTime() <0){
-      this.color='#B45545';
+      this.color=COLORTASK.Overdue;
     }else if (fechaComponente.getTime()-fechaActual.getTime() <unDia){
-      this.color='#ffb030';
+      this.color=COLORTASK.Alert;
+    }
+
+    switch (Number(this.task.category)){
+      case CATEGORY.Home:
+        this.borderColor=COLORS.Home;
+        break;
+      case CATEGORY.Study:
+        this.borderColor=COLORS.Study;
+        break;
+      case CATEGORY.Work:
+        this.borderColor=COLORS.Work;
+        break;
     }
   }
 

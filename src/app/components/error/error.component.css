@@ -1,0 +1,15 @@
+*{
+    text-align: center;
+    display: block;
+    padding: 3px;
+}
+
+a{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    text-decoration: none;
+    padding: 0.5rem;
+    background-color: rgb(58, 107, 58);
+    margin: 1rem auto;
+}

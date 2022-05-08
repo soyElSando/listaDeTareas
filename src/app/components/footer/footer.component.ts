@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
-
+  
   constructor(
     private router:Router
   ) { }
