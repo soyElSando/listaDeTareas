@@ -13,26 +13,28 @@ const httpOptions ={
   providedIn: 'root'
 })
 export class TaskService {
-  private apiUrl = 'http://localhost:5000/tasks'
+  private apiUrl = 'https://tasklist-420f9-default-rtdb.firebaseio.com/tasks'
 
   constructor(
     private http:HttpClient
   ) { }
 
   getTasks(): Observable<Task[]>{
-    return this.http.get<Task[]>(this.apiUrl)
+    const url = `${this.apiUrl}.json`
+    return this.http.get<Task[]>(url)
   }
 
   deleteTask(task:Task): Observable<Task>{
-    const url = `${this.apiUrl}/${task.id}`
+    const url = `${this.apiUrl}/${task.id}.json`
     return this.http.delete<Task>(url)
   }
   updateTask(task:Task): Observable<Task>{
-    const url = `${this.apiUrl}/${task.id}`
+    const url = `${this.apiUrl}/${task.id}.json`
     return this.http.put<Task>(url, task, httpOptions)
   }
 
   addTask(task:Task): Observable<Task>{
-    return this.http.post<Task>(this.apiUrl, task, httpOptions)
+    const url = `${this.apiUrl}.json`
+    return this.http.post<Task>(url, task, httpOptions)
   }
 }

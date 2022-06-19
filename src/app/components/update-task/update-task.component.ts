@@ -50,8 +50,7 @@ export class UpdateTaskComponent implements OnInit {
     const {text,day,category,reminder, id} = this
     const updatedTask ={text,day,category,reminder, id}
     console.log(updatedTask)
-    this.taskService.updateTask(updatedTask).subscribe();
-    this.router.navigate(["/"])
+    this.taskService.updateTask(updatedTask).subscribe(()=>this.router.navigate(["/"]));
     }
   }
 
